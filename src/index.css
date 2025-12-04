@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes expandHeight {
+    0% { height: 0; }
+    100% { height: 100%; }
+  }
+
+  .animate-expandHeight {
+    animation: expandHeight 0.5s ease-out forwards;
+  }
+}
