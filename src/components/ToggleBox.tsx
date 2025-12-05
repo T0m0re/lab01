@@ -2,18 +2,15 @@
 const ToggleBox = ({isNavOpen, setIsNavOpen} : {isNavOpen: boolean; setIsNavOpen: (value: boolean) => void} ) => {
     
   return (
-    <>
-    <nav className="absolute top-0 w-full z-100">
-        <div className="flex items-center justify-between">
-            
+    <nav className="absolute top-0 w-full z-200">
+        <div className="flex items-center justify-between ">
           <> 
-            <h3 className="text-3xl ml-5 text-red-600"> LAB 01</h3>
+            <h3 className="text-3xl ml-5 text-white">LAB 01</h3>
                 
-            <div className="group relative bg-red-500 flex flex-col items-stretch justify-center cursor-pointer w-40 h-30 overflow-hidden border border-black" onClick={()=>setIsNavOpen(!isNavOpen)}>
+            <div className="group relative bg-white flex flex-col items-center justify-center cursor-pointer w-40 h-30 overflow-hidden" onClick={()=>setIsNavOpen(!isNavOpen)}>
               {isNavOpen ? 
               <>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 32 32"><path fill="none" stroke="#020202" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 30L30 2m0 28L2 2"/></svg>
-                  <h1>hhhhhhhhhhhhhhh</h1>
+                  <svg className="hover:text-red-600" xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 30L30 2m0 28L2 2"/></svg>
               </>
             :
               <>
@@ -29,7 +26,6 @@ const ToggleBox = ({isNavOpen, setIsNavOpen} : {isNavOpen: boolean; setIsNavOpen
             
         </div>
     </nav>
-    </>
   )
 }
 export default ToggleBox
