@@ -10,7 +10,7 @@ const ToggleBox = ({isNavOpen, setIsNavOpen} : {isNavOpen: boolean; setIsNavOpen
             <div className="group relative bg-white flex flex-col items-center justify-center cursor-pointer w-40 h-30 overflow-hidden" onClick={()=>setIsNavOpen(!isNavOpen)}>
               {isNavOpen ? 
               <>
-                  <svg className="hover:text-red-600" xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 30L30 2m0 28L2 2"/></svg>
+                  <svg className="hover:text-red-600 z-205" xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 30L30 2m0 28L2 2"/></svg>
               </>
             :
               <>
