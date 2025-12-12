@@ -13,30 +13,53 @@ const NavScreen = ({isClosing,
 useGSAP(()=>{
     gsap.to('.overlay_group', {
      yPercent: -100,
-     duration: 0.8,
+     duration: 0.6,
      stagger: 0.1
+    })
+
+    gsap.fromTo('.x-button', {
+      opacity: 0,
+      xPercent: 100
+    }, {
+      opacity: 1,
+      xPercent: 0,
+      duration: 1.2
     })
   })
 
   useEffect(() => {
     if (isClosing) {
-      gsap.to('.overlay_group', {
+      gsap.to('.oerlay_group', {
         yPercent: 0, // Slide down
         duration: 0.8,
         stagger: 0.1
       });
     }
+
+    if(isClosing){
+      gsap.fromTo('.overlay_group', {
+        z: 1000,
+      }, {
+        yPercent: 0, // Slide down
+        duration: 0.8,
+        stagger: 0.1,
+        z: 0
+      })
+    }
   }, [isClosing]);
   return (
     <nav className="relative w-full h-full bg-white overflow-y-hidden">
-      <div  className="grid_box absolute inset-0 grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
-        <div className="overlay_group bg-black h-dvh"></div>
-        <div className="overlay_group bg-black h-dvh"></div>
-        <div className="overlay_group bg-black h-dvh"></div>
-        <div className="overlay_group bg-black h-dvh"></div>
-        <div className="overlay_group bg-black h-dvh"></div>
+      <div  className="grid_box absolute inset-0 grid grid-cols-[repeat(auto-fit,minmax(20px,1fr))]">
+        <div className="overlay_group bg-black h-dvh z-5"></div>
+        <div className="overlay_group bg-black h-dvh z-5"></div>
+        <div className="overlay_group bg-black h-dvh z-5"></div>
+        <div className="overlay_group bg-black h-dvh z-5"></div>
+        <div className="overlay_group bg-black h-dvh z-5"></div>
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-full">
+      <div className="absolute top-0 right-0 overflow-hidden p-2 ">
+         <svg onClick={onClose} className="x-button hover:text-red-600 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 30L30 2m0 28L2 2"/></svg>
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-full z-5">
         <Link to="/" onClick={onClose} className="w-full">
         <div className="w-full flex items-center justify-center relative border-y group cursor-pointer overflow-y-hidden">
           <div className="absolute inset-0 bg-amber-300 translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center overflow-hidden whitespace-nowrap">

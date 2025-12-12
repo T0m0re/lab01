@@ -4,7 +4,10 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import { useState } from "react"
+import SplitText from "gsap/SplitText"
+import gsap from "gsap"
 
+gsap.registerPlugin(SplitText)
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false)
   return (
