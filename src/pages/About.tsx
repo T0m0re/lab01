@@ -1,14 +1,9 @@
-import NavScreen from "../components/NavScreen"
-import ToggleBox from "../components/ToggleBox"
 
-const About = ({isNavOpen, setIsNavOpen}: {isNavOpen: boolean, setIsNavOpen: (value: boolean)=>void}) => {
+// const About = ({isNavOpen, setIsNavOpen}: {isNavOpen: boolean, setIsNavOpen: (value: boolean)=>void}) => {
+const About = () => {
     return (
-    <main className='relative h-dvh bg-black flex items-center justify-center'>
-    <ToggleBox isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}/>
-    { isNavOpen ? 
-        <NavScreen setIsNavOpen={setIsNavOpen}/> :  
-        <h2 className="text-white">OMO</h2>
-    }
+    <main className='relative h-dvh flex items-center justify-center'>
+         <h2 className="h2_text max-w-6/7 md:max-w-4xl text-white text-7xl font-bold text-center">WE’RE SO GOOD AT WHAT WE DO</h2>
    </main>
   )
 }
