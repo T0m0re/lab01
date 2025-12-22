@@ -5,7 +5,7 @@ const ToggleBox = ({setIsNavOpen} : {setIsNavOpen: (value: boolean) => void} ) =
   return (
     <nav className="absolute top-0 w-full">
         <div className="flex items-center justify-between ">
-            <h3 className="text-3xl ml-5 text-white">LAB 01</h3>
+            <h3 className="text-3xl ml-5 text-white">LAB I</h3>
               <div className="group relative z-2 bg-white flex flex-col items-center justify-center cursor-pointer w-40 h-30 overflow-hidden" onClick={()=>setIsNavOpen(true)}>
                 <div className="absolute inset-0 bg-[#E4572E] z-1 translate-y-full group-hover:translate-y-0 transition-transform ease-in-out duration-300"></div>
                 <div className="z-2 self-end">

@@ -1,22 +1,27 @@
-import { useState } from "react";
-import { Outlet } from "react-router-dom"
+import { useRef, useState } from "react";
+import { Outlet  } from "react-router-dom"
 import ToggleBox from "./ToggleBox";
 import NavScreen from "./NavScreen";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Footer from "./Footer";
 
 
 const MainLaout = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false)
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [renderNav, setRenderNav] = useState(false);
-  
+  const animationTrigger = useRef(0); 
+
   useGSAP(()=>{
+
+    gsap.set('.home-overlay_group', { yPercent: 0 });
+
     gsap.to('.home-overlay_group', {
       yPercent: 100,
-      duration: 0.8,
+      duration: 0.6,
       stagger: 0.1
     });
-  }, [])
+  }, [animationTrigger.current])
 
   const openNav = () => {
     setRenderNav(true);
@@ -30,6 +35,10 @@ const MainLaout = () => {
       setRenderNav(false);
     }, 1000)
     
+  };
+
+   const onNavClosed = () => {
+    animationTrigger.current += 1; // Increment to trigger useGSAP
   };
   return (
     <main className="relative h-dvh bg-[#0C0C0C] flex items-center justify-center overflow-y-hidden">
@@ -45,11 +54,12 @@ const MainLaout = () => {
         <ToggleBox setIsNavOpen={openNav} />
       )}
       {renderNav && (
-        <NavScreen isClosing={!isNavOpen} onClose={closeNav}/>
+        <NavScreen isClosing={!isNavOpen} onClose={closeNav} onAnimationComplete={onNavClosed}/>
       )}
     
 
     {!renderNav && <Outlet/>}
+    <Footer/>
     </main>
   )
 }
