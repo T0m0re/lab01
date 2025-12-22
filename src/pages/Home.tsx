@@ -15,14 +15,14 @@ useGSAP(()=>{
       yPercent: 0,
       opacity: 1,
       filter: 'blur(0px)',
-      duration: 1,
+      duration: 0.8,
       stagger: 0.15,
     })
 })
 
   return (
     <section className="h-dvh flex items-center justify-center">
-      <h2 className="h2_text max-w-6/7 md:max-w-5xl text-white lg:text-6xl text-4xl font-bold text-center uppercase">The absence of evidence is not the evidence of absence.</h2>
+      <h2 className="h2_text max-w-[95%] md:max-w-5xl text-white lg:text-6xl text-4xl font-bold text-center uppercase">The absence of evidence is not the evidence of absence.</h2>
 
    </section>
   )

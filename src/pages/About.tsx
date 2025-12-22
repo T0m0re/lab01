@@ -14,13 +14,13 @@ const About = () => {
       yPercent: 0,
       opacity: 1,
       filter: 'blur(0px)',
-      duration: 1,
+      duration: 0.8,
       stagger: 0.15,
     })
 })
     return (
     <main className='relative h-dvh flex items-center justify-center'>
-         <h2 className="h2_text max-w-6/7 md:max-w-4xl text-white lg:text-6xl text-4xl font-bold text-center uppercase">Simply because you don't have evidence that something doesn't exist...</h2>
+         <h2 className="h2_text max-w-[95%] md:max-w-4xl text-white lg:text-6xl text-4xl font-bold text-center uppercase">Simply because you don't have evidence that something doesn't exist...</h2>
    </main>
   )
 }
