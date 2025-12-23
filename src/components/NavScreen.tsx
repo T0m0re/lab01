@@ -91,7 +91,6 @@ useGSAP(()=>{
   useEffect(() => {
 
     if(isClosing){
-
       gsap.to('.x-button', {
       opacity: 0,
       xPercent: 100
