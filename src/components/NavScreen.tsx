@@ -67,7 +67,7 @@ const linkMouseLeaveEvent = (e: React.MouseEvent<HTMLAnchorElement>, index: numb
 useGSAP(()=>{
     gsap.to('.overlay_group', {
      yPercent: 100,
-     duration: 0.6,
+     duration: 0.4,
      stagger: 0.1,
     })
 
@@ -94,7 +94,7 @@ useGSAP(()=>{
       gsap.to('.overlay_group', 
       {
         yPercent: 0,
-        duration: 0.6,
+        duration: 0.4,
         stagger: 0.1,
         onComplete: () => {
           onAnimationComplete?.()

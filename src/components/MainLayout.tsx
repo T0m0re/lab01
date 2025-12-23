@@ -18,7 +18,7 @@ const MainLaout = () => {
 
     gsap.to('.home-overlay_group', {
       yPercent: 100,
-      duration: 0.6,
+      duration: 0.4,
       stagger: 0.1
     });
   }, [animationTrigger.current])
