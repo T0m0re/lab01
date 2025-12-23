@@ -91,6 +91,12 @@ useGSAP(()=>{
   useEffect(() => {
 
     if(isClosing){
+
+      gsap.to('.x-button', {
+      opacity: 0,
+      xPercent: 100
+      })
+
       gsap.to('.overlay_group', 
       {
         yPercent: 0,
