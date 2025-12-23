@@ -114,11 +114,11 @@ useGSAP(()=>{
       <div className="absolute top-0 right-0 overflow-hidden p-2 ">
         <svg onClick={onClose} className="x-button hover:text-[#E4572E] cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 30L30 2m0 28L2 2"/></svg>
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-full z-4">
+      <div className="[&>*:nth-child(odd)]:border-y absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-full z-4">
       {links.map(({title, link}, index) => (
-        <Link key={index} to={link} onClick={onClose} className="w-full title" onMouseEnter={(e) => linkMouseEnterEvent(e, index)} 
+        <Link key={index} to={link} onClick={onClose} className="w-full title border-y" onMouseEnter={(e) => linkMouseEnterEvent(e, index)} 
     onMouseLeave={(e) => linkMouseLeaveEvent(e, index)}>
-        <div ref={el => {if (el) linkContainerRefs.current[index] = el}}  className="relative w-full flex items-center justify-center border-y group cursor-pointer overflow-y-hidden">
+        <div ref={el => {if (el) linkContainerRefs.current[index] = el}}  className="relative w-full flex items-center justify-center group cursor-pointer overflow-y-hidden">
           <div ref={el => {if (el) linkOverflowRefs.current[index] = el}}  className="absolute inset-0 bg-[#FFC914]  flex items-center justify-center translate-y-full overflow-hidden whitespace-nowrap">
             {index === 0 && (
                 <div className="flex items-center gap-6 slide-track">

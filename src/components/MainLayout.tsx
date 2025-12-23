@@ -38,7 +38,7 @@ const MainLaout = () => {
   };
 
    const onNavClosed = () => {
-    animationTrigger.current += 1; // Increment to trigger useGSAP
+    animationTrigger.current += 1;
   };
   return (
     <main className="relative h-dvh bg-[#0C0C0C] flex items-center justify-center overflow-y-hidden">
